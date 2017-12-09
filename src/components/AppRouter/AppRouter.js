@@ -31,7 +31,7 @@ export class AppRouter extends Component {
             <Switch>
               <PrivateRoute path="/user/me" exact component={UserPage} />
               <PrivateRoute path="/user/:name" component={UserPage} />
-              { !this.props.isAuthorized && <Route path="/login" exact component={Login} /> }
+              { !isAuthorized && <Route path="/login" exact component={Login} /> }
               <Redirect to="/user/me" />
             </Switch>
           </div>
