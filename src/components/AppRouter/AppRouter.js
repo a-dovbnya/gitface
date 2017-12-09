@@ -25,9 +25,11 @@ export class AppRouter extends Component {
           <p className="networkError">Ошибка: {networkError}</p>
         :
           <div className="App">
-            <div className="user-page__panel">
-              <button onClick={this.appLogout} className="user-page__button">Exit</button>
-            </div>
+            {isAuthorized &&
+              <div className="user-page__panel">
+                <button onClick={this.appLogout} className="user-page__button">Exit</button>
+              </div>
+            }
             <Switch>
               <PrivateRoute path="/user/me" exact component={UserPage} />
               <PrivateRoute path="/user/:name" component={UserPage} />
