@@ -1,5 +1,7 @@
 import { handleActions } from "redux-actions";
 import {fetchFollowersRequest, fetchFollowersSuccess, fetchFollowersFailure } from "../actions/followers";
+import {logout} from "../actions/auth";
+
 const initialState = {
   isFetching: false,
   isFetched: false,
@@ -27,6 +29,10 @@ export default handleActions(
       isFetching: false,
       isFetched: false,
       error: action.payload
+    }),
+    [logout]: state => ({
+      ...state,
+      ...initialState,
     })
   }, initialState );
 
