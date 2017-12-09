@@ -41,7 +41,6 @@ export class AppRouter extends Component {
   }
 }
 
-//export default AppRouter;
 const mapStateToProps = state => ({
   isAuthorized: getIsAuthorized(state),
   networkError: getNetworkError(state)
