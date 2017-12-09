@@ -38,7 +38,6 @@ export class Followers extends PureComponent {
     }
 }
 
-//export default Followers;
 const mapStateToProps = state => ({
     followers: getFollowers(state),
     isFetching: getFetching(state)
