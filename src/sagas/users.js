@@ -5,8 +5,6 @@ import requestFlow from './request';
   
 export function* fetchUserSaga(action) {
   try {
-    //const userData = yield call(getUserInformation, payload);
-    //yield put(fetchUserSuccess(userData));
     let userData;
     if (fetchTokenOwnerRequest.toString() === action.type) {
       userData = yield call(requestFlow, getTokenOwner, action.payload);

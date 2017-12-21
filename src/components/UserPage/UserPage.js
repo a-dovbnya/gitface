@@ -1,7 +1,7 @@
 import React, {PureComponent} from 'react';
 import Followers from "../Followers";
 import {connect} from "react-redux";
-import {getUsers, getFetching, getError} from "../../reducers/users";
+import {getUsers, getFetching} from "../../reducers/users";
 import { fetchUserRequest, fetchTokenOwnerRequest } from "../../actions/users";
 import Loader from 'react-svg-spinner';
 import "./UserPage.css";

@@ -1,6 +1,6 @@
 import { handleActions } from "redux-actions";
 import { fetchUserRequest, fetchUserSuccess, fetchUserFailure } from "../actions/users";
-import { logout } from '../actions/auth';
+import {logout} from "../actions/auth";
 
 const initialState = {
   isFetching: false,
@@ -31,7 +31,11 @@ export default handleActions(
       isFetched: false,
       error: action.payload,
       data: null
-    })
+    }),
+    [logout]: state => ({
+      ...state,
+      ...initialState,
+    }),
   }, initialState);
 
 export const getUsers = state => state.users.data;
